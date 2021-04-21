@@ -1,4 +1,4 @@
-import 'package:fastmilk_admin/views/EditPegawai/edit_pegawai.dart';
+import 'package:fastmilk_admin/screen/EditPegawai/edit_pegawai.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

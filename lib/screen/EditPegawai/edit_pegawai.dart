@@ -1,6 +1,6 @@
-import 'package:fastmilk_admin/views/EditPegawai/components/body_editpegawai.dart';
-import 'package:fastmilk_admin/views/ProfilePegawai/profile_pegawai.dart';
 import 'package:flutter/material.dart';
+
+import 'components/body_editpegawai.dart';
 
 void main() => runApp(EditPegawai());
 
