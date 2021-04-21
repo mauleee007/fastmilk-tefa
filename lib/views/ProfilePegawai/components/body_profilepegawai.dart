@@ -1,14 +1,15 @@
+import 'package:fastmilk_admin/views/EditPegawai/edit_pegawai.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BodyTambahPegawai extends StatefulWidget {
-  BodyTambahPegawai({Key key}) : super(key: key);
+class BodyProfilePegawai extends StatefulWidget {
+  BodyProfilePegawai({Key key}) : super(key: key);
 
   @override
-  _BodyTambahPegawaiState createState() => _BodyTambahPegawaiState();
+  _BodyProfilePegawaiState createState() => _BodyProfilePegawaiState();
 }
 
-class _BodyTambahPegawaiState extends State<BodyTambahPegawai> {
+class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -143,7 +144,12 @@ class _BodyTambahPegawaiState extends State<BodyTambahPegawai> {
                   width: MediaQuery.of(context).size.width / 2.3,
                   height: 50,
                   child: MaterialButton(
-                    onPressed: null,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => EditPegawai()),
+                      );
+                    },
                     child: Text('EDIT',
                         style:
                             TextStyle(color: Color(0xFFFE931D), fontSize: 16)),
@@ -158,10 +164,15 @@ class _BodyTambahPegawaiState extends State<BodyTambahPegawai> {
                 Container(
                   width: MediaQuery.of(context).size.width / 2.3,
                   height: 50,
-                  decoration: BoxDecoration(color: Color(0xFFFE931D), borderRadius: BorderRadius.all(Radius.circular(20))),
+                  decoration: BoxDecoration(
+                      color: Color(0xFFFE931D),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: MaterialButton(
-                    onPressed: () {  },
-                    child: Text('DELETE', style: TextStyle(color: Colors.white, fontSize: 16),),
+                    onPressed: () {},
+                    child: Text(
+                      'DELETE',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
                     shape: RoundedRectangleBorder(
                         side: BorderSide(
                             color: Color(0xFFFE931D),
