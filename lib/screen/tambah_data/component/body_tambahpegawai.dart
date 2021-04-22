@@ -35,8 +35,8 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
                     key: _formKey,
                     child: Column(
                       children: <Widget>[
-                        EmailFormField(),
                         NamaFormField(),
+                        EmailFormField(),
                         AlamatFormField(),
                         PhoneFormField()
                       ],
