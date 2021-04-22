@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../size_config.dart';
+
 class BodyEditPegawai extends StatefulWidget {
   BodyEditPegawai({Key key}) : super(key: key);
 
@@ -12,6 +14,7 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SingleChildScrollView(
       child: Container(
           child: Column(children: [
@@ -38,7 +41,7 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
                 thickness: 1,
               ),
               Container(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                 child: Row(
                   children: [
                     Container(
@@ -71,10 +74,10 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
               )
             ])),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 50,
+            height: SizeConfig.blockSizeHorizontal * 15,
             decoration: BoxDecoration(
                 color: Color(0xFFFE931D),
                 borderRadius: BorderRadius.all(Radius.circular(20))),

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'components/body_editpegawai.dart';
 
-void main() => runApp(EditPegawai());
+// void main() => runApp(EditPegawai());
 
 class EditPegawai extends StatelessWidget {
+  static String routeName = "/editPegawai";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

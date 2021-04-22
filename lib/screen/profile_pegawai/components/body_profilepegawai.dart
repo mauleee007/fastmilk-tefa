@@ -2,6 +2,8 @@ import 'package:fastmilk_admin/screen/edit_pegawai/edit_pegawai.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../size_config.dart';
+
 class BodyProfilePegawai extends StatefulWidget {
   BodyProfilePegawai({Key key}) : super(key: key);
 
@@ -12,13 +14,14 @@ class BodyProfilePegawai extends StatefulWidget {
 class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Container(
       child: Column(
         children: [
           Expanded(
               flex: 0,
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 20),
+                padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 2),
                 child: Column(
                   children: [
                     SvgPicture.asset('assets/images/Admin.svg'),
@@ -39,7 +42,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   thickness: 1,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                  padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                   child: Row(
                     children: [
                       Container(
@@ -62,7 +65,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   thickness: 1,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                  padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                   child: Row(
                     children: [
                       Container(
@@ -85,7 +88,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   thickness: 1,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                  padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                   child: Row(
                     children: [
                       Container(
@@ -109,7 +112,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   thickness: 1,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                 padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                   child: Row(
                     children: [
                       Container(

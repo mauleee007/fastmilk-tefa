@@ -1,21 +1,17 @@
-import 'package:fastmilk_admin/components/back_button.dart';
 import 'package:flutter/material.dart';
 
 import 'components/body_profilepegawai.dart';
 
-void main() => runApp(ProfilePegawai());
+// void main() => runApp(ProfilePegawai());
 
 class ProfilePegawai extends StatelessWidget {
+  static String routeName = "/profilePegawai";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            // leading: BackButtonRounded(
-            //   onPress: () {},
-            //   text: 'Kembali',
-            // ),
             leading: MaterialButton(
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -24,11 +20,11 @@ class ProfilePegawai extends StatelessWidget {
                   Icons.arrow_back,
                   color: Colors.white,
                 )),
-            title: Center(
-                child: Text(
+            title: Text(
               'PROFILE PEGAWAI',
               style: TextStyle(fontSize: 17),
-            )),
+            ),
+            centerTitle: true,
             backgroundColor: Color(0xFFFE931D),
           ),
           body: BodyProfilePegawai()),
