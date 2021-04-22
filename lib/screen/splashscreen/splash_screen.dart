@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:fastmilk_admin/screen/landing_screen/landing_screen.dart';
+import 'package:fastmilk_admin/size_config.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -29,12 +30,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: Center(
         child: Image.asset(
-          'assets/images/Group6906.png',
-          width: 200,
-          height: 100,
+          'assets/images/splash.png',
+          width: SizeConfig.blockSizeHorizontal * 50,
+          height: SizeConfig.blockSizeVertical * 50,
         ),
       ),
     );
