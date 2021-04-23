@@ -1,7 +1,7 @@
 import 'package:fastmilk_admin/routes.dart';
+import 'package:fastmilk_admin/screen/homepage/home_page.dart';
 import 'package:fastmilk_admin/theme.dart';
 import 'package:flutter/material.dart';
-
 import 'screen/splashscreen/splash_screen.dart';
 
 void main() {
@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: theme(),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-      initialRoute: SplashScreen.routeName,
+      home: HomePage(),
+      // initialRoute: SplashScreen.routeName,
       routes: routes,
     );
   }

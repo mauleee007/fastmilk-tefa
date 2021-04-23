@@ -1,5 +1,6 @@
-import 'package:fastmilk_admin/screen/list_pegawai/component/body_datapegawai.dart';
-import 'package:fastmilk_admin/screen/list_pegawai/data_pegawai.dart';
+import 'package:fastmilk_admin/screen/data_pegawai/component/body_datapegawai.dart';
+import 'package:fastmilk_admin/screen/data_pegawai/data_pegawai.dart';
+import 'package:fastmilk_admin/size_config.dart';
 import 'package:flutter/material.dart';
 
 class BodyHome extends StatefulWidget {
@@ -10,41 +11,40 @@ class BodyHome extends StatefulWidget {
 class _BodyHomeState extends State<BodyHome> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Container(
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 1),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: 162,
-              height: 146,
+              width: SizeConfig.blockSizeHorizontal * 35,
+              height: SizeConfig.blockSizeVertical * 35,
               child: Image.asset('assets/images/logo.png'),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(
+                    horizontal: SizeConfig.blockSizeHorizontal * 5),
                 child: Container(
-                  width: 363,
-                  height: 150,
+                  width: SizeConfig.blockSizeHorizontal * 90,
+                  height: SizeConfig.blockSizeVertical * 20,
                   child: OutlineButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     borderSide: BorderSide(width: 1, color: Colors.grey),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DataPegawai()),
-                      );
+                      Navigator.pushNamed(context, DataPegawai.routeName);
                     },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Image.asset(
                           'assets/images/pegawai.png',
-                          width: 120,
-                          height: 120,
+                          width: SizeConfig.blockSizeHorizontal * 15,
+                          height: SizeConfig.blockSizeVertical * 15,
                         ),
                         Text(
                           'Data Pegawai',
@@ -60,12 +60,13 @@ class _BodyHomeState extends State<BodyHome> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 3),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(
+                    horizontal: SizeConfig.blockSizeHorizontal * 5),
                 child: Container(
-                  width: 363,
-                  height: 150,
+                  width: SizeConfig.blockSizeHorizontal * 90,
+                  height: SizeConfig.blockSizeVertical * 20,
                   child: OutlineButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
@@ -81,8 +82,8 @@ class _BodyHomeState extends State<BodyHome> {
                       children: [
                         Image.asset(
                           'assets/images/barang.png',
-                          width: 120,
-                          height: 120,
+                          width: SizeConfig.blockSizeHorizontal * 15,
+                          height: SizeConfig.blockSizeVertical * 15,
                         ),
                         Text(
                           'Data Barang',
