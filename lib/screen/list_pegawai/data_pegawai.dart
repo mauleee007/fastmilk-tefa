@@ -1,12 +1,8 @@
-import 'package:fastmilk_admin/screen/list_pegawai/component/body_datapegawai.dart';
 import 'package:fastmilk_admin/screen/list_pegawai/component/bodydata.dart';
 import 'package:fastmilk_admin/screen/tambah_data/tambah_datapegawai.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
   runApp(DataPegawai());
 }
 
@@ -38,7 +34,7 @@ class DataPegawai extends StatelessWidget {
             centerTitle: true,
             backgroundColor: Color(0xFFFE931D),
           ),
-          body: BodyDataPegawai()),
+          body: BodyData()),
     );
   }
 }

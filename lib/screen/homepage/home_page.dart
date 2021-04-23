@@ -9,11 +9,11 @@ void main() async {
 }
 
 class HomePage extends StatelessWidget {
-  static String tag = 'home-page';
+  static String routeName = '/homepage';
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(body: BodyHome()),
+    return Scaffold(
+      body: BodyHome(),
     );
   }
 }
