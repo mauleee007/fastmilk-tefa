@@ -1,5 +1,7 @@
+import 'package:fastmilk_admin/constants.dart';
 import 'package:fastmilk_admin/screen/data_pegawai/component/body_datapegawai.dart';
 import 'package:fastmilk_admin/screen/data_pegawai/data_pegawai.dart';
+import 'package:fastmilk_admin/screen/profile_admin/profile_admin.dart';
 import 'package:fastmilk_admin/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +24,37 @@ class _BodyHomeState extends State<BodyHome> {
               width: SizeConfig.blockSizeHorizontal * 35,
               height: SizeConfig.blockSizeVertical * 35,
               child: Image.asset('assets/images/logo.png'),
+            ),
+            Container(
+              width: SizeConfig.blockSizeHorizontal * 90,
+              height: SizeConfig.blockSizeVertical * 10,
+              child: MaterialButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, ProfileAdmin.routeName);
+                },
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.person,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: SizeConfig.blockSizeHorizontal * 28,
+                    ),
+                    Text(
+                      'Profil',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ],
+                ),
+                color: kPrimaryColor,
+                shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                        color: Color(0xFFFE931D),
+                        width: 1,
+                        style: BorderStyle.solid),
+                    borderRadius: BorderRadius.circular(20)),
+              ),
             ),
             Padding(
               padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),

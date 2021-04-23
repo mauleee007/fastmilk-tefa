@@ -39,17 +39,6 @@ class _BodyDataPegawaiState extends State<BodyDataPegawai> {
             },
           ),
         ),
-        // Padding(
-        //   padding: const EdgeInsets.fromLTRB(0, 50, 10, 0),
-        //   child: Container(
-        //     height: 50,
-        //     width: 50,
-        //     child: FloatingActionButton(
-        //         backgroundColor: Colors.orange,
-        //         onPressed: () {},
-        //         child: Icon(Icons.add)),
-        //   ),
-        // ),
       ),
     );
   }

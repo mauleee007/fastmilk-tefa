@@ -1,3 +1,4 @@
+import 'package:fastmilk_admin/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -41,7 +42,9 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
                 thickness: 1,
               ),
               Container(
-                padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
+                padding: EdgeInsets.symmetric(
+                    vertical: SizeConfig.blockSizeVertical * 1.5,
+                    horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                 child: Row(
                   children: [
                     Container(
@@ -74,7 +77,9 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
               )
             ])),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
+          padding: EdgeInsets.symmetric(
+              vertical: SizeConfig.blockSizeVertical * 1.5,
+              horizontal: SizeConfig.blockSizeHorizontal * 3.5),
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: SizeConfig.blockSizeHorizontal * 15,
@@ -83,7 +88,7 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
                 borderRadius: BorderRadius.all(Radius.circular(20))),
             child: MaterialButton(
               onPressed: () {
-                if(!_formKey.currentState.validate()){
+                if (!_formKey.currentState.validate()) {
                   // ScaffoldMessenger.of(context).showSnackBar(Snackbar(content: Text('Processing Data')));
                 }
               },
