@@ -1,4 +1,5 @@
 import 'package:fastmilk_admin/component/default_button.dart';
+import 'package:fastmilk_admin/screen/homepage/home_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -41,7 +42,7 @@ class Body extends StatelessWidget {
                 DefaultButton(
                     text: "Masuk",
                     press: () {
-                      // Navigator.pushNamed(context, routeName)
+                      Navigator.pushNamed(context, HomePage.routeName);
                     })
               ],
             ),
