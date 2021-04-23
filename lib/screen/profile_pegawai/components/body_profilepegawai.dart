@@ -1,4 +1,4 @@
-import 'package:fastmilk_admin/screen/edit_pegawai/edit_pegawai.dart';
+import 'package:fastmilk_admin/screen/edit_data/edit_pegawai/edit_pegawai.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -21,7 +21,8 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
           Expanded(
               flex: 0,
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 2),
+                padding: EdgeInsets.symmetric(
+                    vertical: SizeConfig.blockSizeVertical * 2),
                 child: Column(
                   children: [
                     SvgPicture.asset('assets/images/Admin.svg'),
@@ -42,7 +43,9 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   thickness: 1,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
+                  padding: EdgeInsets.symmetric(
+                      vertical: SizeConfig.blockSizeVertical * 1.5,
+                      horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                   child: Row(
                     children: [
                       Container(
@@ -65,7 +68,9 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   thickness: 1,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
+                  padding: EdgeInsets.symmetric(
+                      vertical: SizeConfig.blockSizeVertical * 1.5,
+                      horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                   child: Row(
                     children: [
                       Container(
@@ -88,7 +93,9 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   thickness: 1,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
+                  padding: EdgeInsets.symmetric(
+                      vertical: SizeConfig.blockSizeVertical * 1.5,
+                      horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                   child: Row(
                     children: [
                       Container(
@@ -112,7 +119,9 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   thickness: 1,
                 ),
                 Container(
-                 padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
+                  padding: EdgeInsets.symmetric(
+                      vertical: SizeConfig.blockSizeVertical * 1.5,
+                      horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                   child: Row(
                     children: [
                       Container(
@@ -148,10 +157,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   height: 50,
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => EditPegawai()),
-                      );
+                      Navigator.pushNamed(context, EditPegawai.routeName);
                     },
                     child: Text('EDIT',
                         style:

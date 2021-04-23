@@ -1,5 +1,8 @@
+import 'package:fastmilk_admin/screen/data_barang/data_barang.dart';
 import 'package:fastmilk_admin/screen/data_pegawai/data_pegawai.dart';
-import 'package:fastmilk_admin/screen/edit_pegawai/edit_pegawai.dart';
+import 'package:fastmilk_admin/screen/detail_barang/detail_barang.dart';
+import 'package:fastmilk_admin/screen/edit_data/edit_barang/edit_barang.dart';
+import 'package:fastmilk_admin/screen/edit_data/edit_pegawai/edit_pegawai.dart';
 import 'package:fastmilk_admin/screen/homepage/home_page.dart';
 import 'package:fastmilk_admin/screen/landing_screen/landing_screen.dart';
 import 'package:fastmilk_admin/screen/login/login.dart';
@@ -14,5 +17,8 @@ final Map<String, WidgetBuilder> routes = {
   ProfilePegawai.routeName: (context) => ProfilePegawai(),
   EditPegawai.routeName: (context) => EditPegawai(),
   HomePage.routeName: (context) => HomePage(),
-  DataPegawai.routeName: (context) => DataPegawai()
+  DataPegawai.routeName: (context) => DataPegawai(),
+  DataBarang.routeName: (context) => DataBarang(),
+  DetailBarang.routeName: (context) => DetailBarang(),
+  EditBarang.routeName: (context) => EditBarang()
 };

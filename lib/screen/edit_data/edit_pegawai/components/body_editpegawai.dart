@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../size_config.dart';
+import '../../../../size_config.dart';
 
 class BodyEditPegawai extends StatefulWidget {
   BodyEditPegawai({Key key}) : super(key: key);
@@ -41,7 +41,9 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
                 thickness: 1,
               ),
               Container(
-                padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
+                padding: EdgeInsets.symmetric(
+                    vertical: SizeConfig.blockSizeVertical * 1.5,
+                    horizontal: SizeConfig.blockSizeHorizontal * 3.5),
                 child: Row(
                   children: [
                     Container(
@@ -67,14 +69,22 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
                 child: Column(
                   children: <Widget>[
                     NamaFormField(),
+                    SizedBox(
+                      height: SizeConfig.blockSizeVertical * 3,
+                    ),
                     AlamatFormField(),
+                    SizedBox(
+                      height: SizeConfig.blockSizeVertical * 3,
+                    ),
                     PhoneFormField()
                   ],
                 ),
               )
             ])),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical * 1.5, horizontal: SizeConfig.blockSizeHorizontal * 3.5),
+          padding: EdgeInsets.symmetric(
+              vertical: SizeConfig.blockSizeVertical * 1.5,
+              horizontal: SizeConfig.blockSizeHorizontal * 3.5),
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: SizeConfig.blockSizeHorizontal * 15,
@@ -83,7 +93,7 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
                 borderRadius: BorderRadius.all(Radius.circular(20))),
             child: MaterialButton(
               onPressed: () {
-                if(!_formKey.currentState.validate()){
+                if (!_formKey.currentState.validate()) {
                   // ScaffoldMessenger.of(context).showSnackBar(Snackbar(content: Text('Processing Data')));
                 }
               },

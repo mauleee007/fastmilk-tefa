@@ -1,13 +1,14 @@
-import 'package:fastmilk_admin/screen/profile_pegawai/profile_pegawai.dart';
-import 'package:fastmilk_admin/size_config.dart';
+import 'package:fastmilk_admin/screen/detail_barang/detail_barang.dart';
 import 'package:flutter/material.dart';
 
-class BodyDataPegawai extends StatefulWidget {
+import '../../../size_config.dart';
+
+class BodyDataBarang extends StatefulWidget {
   @override
-  _BodyDataPegawaiState createState() => _BodyDataPegawaiState();
+  _BodyDataBarangState createState() => _BodyDataBarangState();
 }
 
-class _BodyDataPegawaiState extends State<BodyDataPegawai> {
+class _BodyDataBarangState extends State<BodyDataBarang> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -21,16 +22,15 @@ class _BodyDataPegawaiState extends State<BodyDataPegawai> {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, ProfilePegawai.routeName);
+                  Navigator.pushNamed(context, DetailBarang.routeName);
                 },
                 child: ListTile(
-                  leading: Image.asset('assets/images/profile.png'),
+                  leading: Image.asset('assets/images/barang.png'),
                   title: Text(
-                    'Helmy Fauzi Ganteng',
+                    'Susu Pasteurize Milk',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.black,
-                      fontFamily: 'ABeeZee',
                     ),
                   ),
                   trailing: IconButton(icon: Icon(Icons.arrow_right)),
@@ -44,17 +44,6 @@ class _BodyDataPegawaiState extends State<BodyDataPegawai> {
             },
           ),
         ),
-        // Padding(
-        //   padding: const EdgeInsets.fromLTRB(0, 50, 10, 0),
-        //   child: Container(
-        //     height: 50,
-        //     width: 50,
-        //     child: FloatingActionButton(
-        //         backgroundColor: Colors.orange,
-        //         onPressed: () {},
-        //         child: Icon(Icons.add)),
-        //   ),
-        // ),
       ),
     );
   }
