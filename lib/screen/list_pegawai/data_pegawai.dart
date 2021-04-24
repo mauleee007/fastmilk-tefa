@@ -2,10 +2,6 @@ import 'package:fastmilk_admin/screen/list_pegawai/component/bodydata.dart';
 import 'package:fastmilk_admin/screen/tambah_data/tambah_datapegawai.dart';
 import 'package:flutter/material.dart';
 
-void main() async {
-  runApp(DataPegawai());
-}
-
 class DataPegawai extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,10 +10,7 @@ class DataPegawai extends StatelessWidget {
       home: Scaffold(
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => TambahPegawai()),
-              );
+              Navigator.pushNamed(context, TambahPegawai.routeName);
             },
             backgroundColor: Colors.white,
             shape: RoundedRectangleBorder(

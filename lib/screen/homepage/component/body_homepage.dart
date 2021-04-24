@@ -1,8 +1,13 @@
+import 'package:fastmilk_admin/component/default_button.dart';
 import 'package:fastmilk_admin/constants.dart';
+import 'package:fastmilk_admin/screen/data_barang/data_barang.dart';
 import 'package:fastmilk_admin/screen/data_pegawai/component/body_datapegawai.dart';
 import 'package:fastmilk_admin/screen/data_pegawai/data_pegawai.dart';
+import 'package:fastmilk_admin/screen/login/login.dart';
 import 'package:fastmilk_admin/screen/profile_admin/profile_admin.dart';
+import 'package:fastmilk_admin/services/auth_login.dart';
 import 'package:fastmilk_admin/size_config.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,6 +17,13 @@ class BodyHome extends StatefulWidget {
 }
 
 class _BodyHomeState extends State<BodyHome> {
+  final auth = FirebaseAuth.instance;
+  // FirebaseAuth auth = FirebaseAuth.instance;
+
+  // signOut() async {
+  //   await auth.signOut();
+  // }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -76,11 +88,7 @@ class _BodyHomeState extends State<BodyHome> {
                           borderRadius: BorderRadius.circular(20)),
                       borderSide: BorderSide(width: 1, color: Colors.grey),
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => PegawaiPage()),
-                        // );
+                        Navigator.pushNamed(context, DataBarang.routeName);
                       },
                       child: Column(
                         children: [
@@ -102,6 +110,16 @@ class _BodyHomeState extends State<BodyHome> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical * 10,
+              ),
+              DefaultButton2(
+                  text: "Logout",
+                  press: () {
+                    auth.signOut();
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => Login()));
+                  })
             ],
           ),
         ),

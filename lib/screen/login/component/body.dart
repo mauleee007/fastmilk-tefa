@@ -1,6 +1,8 @@
 import 'package:fastmilk_admin/component/default_button.dart';
 import 'package:fastmilk_admin/screen/homepage/home_page.dart';
+import 'package:fastmilk_admin/services/auth_login.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -39,11 +41,6 @@ class Body extends StatelessWidget {
                 SizedBox(height: SizeConfig.blockSizeVertical * 5),
                 LoginForm(),
                 SizedBox(height: SizeConfig.blockSizeVertical * 8),
-                DefaultButton(
-                    text: "Masuk",
-                    press: () {
-                      Navigator.pushNamed(context, HomePage.routeName);
-                    })
               ],
             ),
           ),
@@ -63,14 +60,40 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  final _formKey = GlobalKey<FormState>();
+
   bool hidePassword = true;
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       child: Column(
         children: [
           buildEmailTextFormField(),
           buildPassTextFormField(),
+          SizedBox(height: SizeConfig.blockSizeVertical * 5),
+          DefaultButton(
+            text: "Masuk",
+            press: () {
+              if (_formKey.currentState.validate()) {
+                Navigator.pushNamed(context, HomePage.routeName);
+                final String email = emailController.text.trim();
+                final String password = passwordController.text.trim();
+                context.read<AuthServices>().login(
+                      email,
+                      password,
+                    );
+              }
+            },
+          ),
         ],
       ),
     );
@@ -78,15 +101,18 @@ class _LoginFormState extends State<LoginForm> {
 
   TextFormField buildPassTextFormField() {
     return TextFormField(
+      controller: passwordController,
       obscureText: hidePassword,
       validator: (value) {
         if (value.isEmpty) {
+          print("Password: null");
           return "Password harus diisi";
         } else if (value.length < 4) {
           return "Password minimal 5 karakter";
         }
         return null;
       },
+
       // onSaved: (String value) {
       //   _password = value;
       // },
@@ -108,8 +134,10 @@ class _LoginFormState extends State<LoginForm> {
 
   TextFormField buildEmailTextFormField() {
     return TextFormField(
+      controller: emailController,
       validator: (value) {
         if (value.isEmpty) {
+          print("Password: null");
           return "Email harus diisi";
         }
         return null;
