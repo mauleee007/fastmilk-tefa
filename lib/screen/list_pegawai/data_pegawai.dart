@@ -1,8 +1,11 @@
 import 'package:fastmilk_admin/screen/list_pegawai/component/bodydata.dart';
 import 'package:fastmilk_admin/screen/tambah_data/tambah_datapegawai.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(DataPegawai());
 }
 
