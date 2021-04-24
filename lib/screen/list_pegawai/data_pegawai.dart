@@ -1,8 +1,16 @@
 import 'package:fastmilk_admin/screen/list_pegawai/component/bodydata.dart';
 import 'package:fastmilk_admin/screen/tambah_data/tambah_datapegawai.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(DataPegawai());
+}
+
 class DataPegawai extends StatelessWidget {
+  static String routeName = '/dataPegawai';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,7 +18,11 @@ class DataPegawai extends StatelessWidget {
       home: Scaffold(
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Navigator.pushNamed(context, TambahPegawai.routeName);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TambahPegawai(),
+                  ));
             },
             backgroundColor: Colors.white,
             shape: RoundedRectangleBorder(

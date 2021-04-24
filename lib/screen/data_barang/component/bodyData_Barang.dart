@@ -33,7 +33,7 @@ class _BodyDataBarangState extends State<BodyDataBarang> {
                       color: Colors.black,
                     ),
                   ),
-                  trailing: IconButton(icon: Icon(Icons.arrow_right)),
+                  trailing: IconButton(icon: Icon(Icons.arrow_right), onPressed: () {  },),
                 ),
               );
             },

@@ -1,10 +1,10 @@
 import 'package:fastmilk_admin/screen/data_barang/data_barang.dart';
-import 'package:fastmilk_admin/screen/data_pegawai/data_pegawai.dart';
 import 'package:fastmilk_admin/screen/detail_barang/detail_barang.dart';
 import 'package:fastmilk_admin/screen/edit_data/edit_barang/edit_barang.dart';
 import 'package:fastmilk_admin/screen/edit_data/edit_pegawai/edit_pegawai.dart';
 import 'package:fastmilk_admin/screen/homepage/home_page.dart';
 import 'package:fastmilk_admin/screen/landing_screen/landing_screen.dart';
+import 'package:fastmilk_admin/screen/list_pegawai/data_pegawai.dart';
 import 'package:fastmilk_admin/screen/login/login.dart';
 import 'package:fastmilk_admin/screen/profile_admin/profile_admin.dart';
 import 'package:fastmilk_admin/screen/profile_pegawai/profile_pegawai.dart';

@@ -1,5 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fastmilk_admin/core/Models/Sales.dart';
+import 'package:fastmilk_admin/core/Services/Firestore_service.dart';
+import 'package:fastmilk_admin/screen/list_pegawai/data_pegawai.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../../size_config.dart';
 
@@ -17,8 +22,19 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
   final emailController = TextEditingController();
   final alamatController = TextEditingController();
   final phoneController = TextEditingController();
+
+  String validateEmail(String value) {
+    if (!value.contains('@')) { //JIKA VALUE MENGANDUNG KARAKTER @
+      return 'Email tidak valid'; //MAKA PESAN DITAMPILKAN
+    }
+    return null;
+  }
   @override
   Widget build(BuildContext context) {
+     FirebaseFirestore firestore = FirebaseFirestore.instance;
+     CollectionReference sales = firestore.collection('Sales');
+
+     var uuid = Uuid();
     SizeConfig().init(context);
     return SingleChildScrollView(
       child: Container(
@@ -62,18 +78,14 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: TextFormField(
                         controller: emailController,
+                        keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                             hintText: "Masukan email",
                             labelText: "Email",
                             labelStyle:
                                 TextStyle(color: Colors.black, fontSize: 20),
                             hintStyle: TextStyle(color: Colors.grey)),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return "Email tidak boleh kosong";
-                          }
-                          return null;
-                        },
+                        validator: validateEmail
                       ),
                     ),
                     Padding(
@@ -131,6 +143,25 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
               onPressed: () {
                 if (_formKey.currentState.validate()) {
                   // ScaffoldMessenger.of(context).showSnackBar(Snackbar(content: Text('Processing Data')));
+                  // FirestoreService().addSales(Sales(
+                  //   nama: ,
+                  //   email: ,
+                  //   alamat: ,
+                  //   notelp: ,
+                  // ));
+                  sales.add({
+                    'Sales_id' : uuid.v1(),
+                    'Nama' : namaController.text,
+                    'Email': emailController.text,
+                    'Alamat' : alamatController.text,
+                    'No_telp' : phoneController.text
+                  });
+                  namaController.text = '';
+                  emailController.text = '';
+                  alamatController.text = '';
+                  phoneController.text = '';
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DataPegawai(),));
                 }
               },
               child: Text(

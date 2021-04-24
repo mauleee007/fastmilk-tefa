@@ -1,9 +1,10 @@
 import 'package:fastmilk_admin/component/default_button.dart';
 import 'package:fastmilk_admin/constants.dart';
 import 'package:fastmilk_admin/screen/data_barang/data_barang.dart';
-import 'package:fastmilk_admin/screen/data_pegawai/component/body_datapegawai.dart';
-import 'package:fastmilk_admin/screen/data_pegawai/data_pegawai.dart';
+
+import 'package:fastmilk_admin/screen/list_pegawai/data_pegawai.dart';
 import 'package:fastmilk_admin/screen/login/login.dart';
+
 import 'package:fastmilk_admin/screen/profile_admin/profile_admin.dart';
 import 'package:fastmilk_admin/services/auth_login.dart';
 import 'package:fastmilk_admin/size_config.dart';

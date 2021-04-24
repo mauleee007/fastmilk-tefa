@@ -28,8 +28,10 @@ dependencies:
   firebase_core: ^1.0.4
   flutter_svg: ^0.21.0+1
   get_it: ^6.1.1
-  provider: ^4.3.3
   firebase_auth: ^1.1.1
+
+  provider: ^5.0.0
+  uuid: ^3.0.4
 
 dev_dependencies:
   flutter_test:

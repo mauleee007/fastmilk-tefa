@@ -23,6 +23,7 @@ class _BodyDataState extends State<BodyData> {
               itemCount: snapshot.data.docs.length,
               itemBuilder: (context, index) {
                 DocumentSnapshot doc = snapshot.data.docs[index];
+
                 return InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, ProfilePegawai.routeName);
@@ -33,6 +34,7 @@ class _BodyDataState extends State<BodyData> {
                       doc['Nama'],
                       overflow: TextOverflow.ellipsis,
                     ),
+                    trailing: Icon(Icons.arrow_right),
                   ),
                 );
               },
