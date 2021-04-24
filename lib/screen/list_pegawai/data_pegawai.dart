@@ -10,6 +10,7 @@ void main() async {
 }
 
 class DataPegawai extends StatelessWidget {
+  static String routeName = '/dataPegawai';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,10 +18,7 @@ class DataPegawai extends StatelessWidget {
       home: Scaffold(
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => TambahPegawai()),
-              );
+              Navigator.push(context, MaterialPageRoute(builder: (context) => TambahPegawai(),));
             },
             backgroundColor: Colors.white,
             shape: RoundedRectangleBorder(

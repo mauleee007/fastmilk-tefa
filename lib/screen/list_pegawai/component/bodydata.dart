@@ -25,6 +25,7 @@ class _BodyDataState extends State<BodyData> {
                 return ListTile(
                   leading: SvgPicture.asset('assets/images/Admin.svg'),
                   title: Text(doc['Nama'], overflow: TextOverflow.ellipsis,),
+                  trailing: Icon(Icons.arrow_right),
                 );
               },
               separatorBuilder: (BuildContext context, int index) {

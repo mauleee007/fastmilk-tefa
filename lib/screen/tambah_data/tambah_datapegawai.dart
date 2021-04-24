@@ -1,8 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'component/body_tambahpegawai.dart';
 
-void main() => runApp(TambahPegawai());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(TambahPegawai());
+}
 
 class TambahPegawai extends StatelessWidget {
   static String routeName = "/tambahPegawai";
