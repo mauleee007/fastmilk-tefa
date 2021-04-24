@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fastmilk_admin/screen/profile_pegawai/profile_pegawai.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -22,9 +23,17 @@ class _BodyDataState extends State<BodyData> {
               itemCount: snapshot.data.docs.length,
               itemBuilder: (context, index) {
                 DocumentSnapshot doc = snapshot.data.docs[index];
-                return ListTile(
-                  leading: SvgPicture.asset('assets/images/Admin.svg'),
-                  title: Text(doc['Nama'], overflow: TextOverflow.ellipsis,),
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, ProfilePegawai.routeName);
+                  },
+                  child: ListTile(
+                    leading: SvgPicture.asset('assets/images/Admin.svg'),
+                    title: Text(
+                      doc['Nama'],
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 );
               },
               separatorBuilder: (BuildContext context, int index) {
