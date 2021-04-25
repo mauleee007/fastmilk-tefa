@@ -44,36 +44,54 @@ class _BodyHomeState extends State<BodyHome> {
                 Container(
                   width: SizeConfig.blockSizeHorizontal * 90,
                   height: SizeConfig.blockSizeVertical * 10,
-                  child: MaterialButton(
+                  child: RaisedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, ProfileAdmin.routeName);
                     },
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.person,
-                          color: Colors.white,
-                        ),
-                        SizedBox(
-                          width: SizeConfig.blockSizeHorizontal * 28,
-                        ),
-                        Text(
-                          'Profil',
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        ),
-                      ],
-                    ),
-                    color: kPrimaryColor,
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Color(0xFFFE931D),
-                            width: 1,
-                            style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.circular(80.0)),
+                    padding: EdgeInsets.all(0.0),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Color(0xffF07028), Color(0xffFE931D)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: BorderRadius.circular(30.0)),
+                      child: Container(
+                        constraints:
+                            BoxConstraints(maxWidth: 400.0, minHeight: 50.0),
+                        alignment: Alignment.center,
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: SizeConfig.blockSizeHorizontal * 2),
+                              child: Icon(
+                                Icons.person,
+                                color: Colors.white,
+                                size: 40,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: SizeConfig.blockSizeHorizontal * 25),
+                              child: Text(
+                                "Profil",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),
+                  padding:
+                      EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: SizeConfig.blockSizeHorizontal * 5),
@@ -108,7 +126,8 @@ class _BodyHomeState extends State<BodyHome> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 3),
+                  padding:
+                      EdgeInsets.only(top: SizeConfig.blockSizeVertical * 3),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: SizeConfig.blockSizeHorizontal * 5),
@@ -141,6 +160,16 @@ class _BodyHomeState extends State<BodyHome> {
                     ),
                   ),
                 ),
+                // SizedBox(
+                //   height: SizeConfig.blockSizeVertical * 10,
+                // ),
+                // DefaultButton2(
+                //     text: "Logout",
+                //     press: () {
+                //       auth.signOut();
+                //       Navigator.of(context).pushReplacement(
+                //           MaterialPageRoute(builder: (context) => Login()));
+                //     })
               ],
             ),
           ),

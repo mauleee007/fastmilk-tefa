@@ -5,8 +5,7 @@ import 'package:fastmilk_admin/screen/list_pegawai/data_pegawai.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:uuid/uuid.dart';
-
-import '../../../size_config.dart';
+import 'package:fastmilk_admin/size_config.dart';
 
 class BodyTambahDataPegawai extends StatefulWidget {
   BodyTambahDataPegawai({Key key}) : super(key: key);
@@ -16,7 +15,6 @@ class BodyTambahDataPegawai extends StatefulWidget {
 }
 
 class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
-
   final _formKey = GlobalKey<FormState>();
   final namaController = TextEditingController();
   final emailController = TextEditingController();
@@ -24,17 +22,19 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
   final phoneController = TextEditingController();
 
   String validateEmail(String value) {
-    if (!value.contains('@')) { //JIKA VALUE MENGANDUNG KARAKTER @
+    if (!value.contains('@')) {
+      //JIKA VALUE MENGANDUNG KARAKTER @
       return 'Email tidak valid'; //MAKA PESAN DITAMPILKAN
     }
     return null;
   }
+
   @override
   Widget build(BuildContext context) {
-     FirebaseFirestore firestore = FirebaseFirestore.instance;
-     CollectionReference sales = firestore.collection('Sales');
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference sales = firestore.collection('Sales');
 
-     var uuid = Uuid();
+    var uuid = Uuid();
     SizeConfig().init(context);
     return SingleChildScrollView(
       child: Container(
@@ -77,16 +77,15 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: TextFormField(
-                        controller: emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                            hintText: "Masukan email",
-                            labelText: "Email",
-                            labelStyle:
-                                TextStyle(color: Colors.black, fontSize: 20),
-                            hintStyle: TextStyle(color: Colors.grey)),
-                        validator: validateEmail
-                      ),
+                          controller: emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                              hintText: "Masukan email",
+                              labelText: "Email",
+                              labelStyle:
+                                  TextStyle(color: Colors.black, fontSize: 20),
+                              hintStyle: TextStyle(color: Colors.grey)),
+                          validator: validateEmail),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -150,18 +149,22 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
                   //   notelp: ,
                   // ));
                   sales.add({
-                    'Sales_id' : uuid.v1(),
-                    'Nama' : namaController.text,
+                    'Sales_id': uuid.v1(),
+                    'Nama': namaController.text,
                     'Email': emailController.text,
-                    'Alamat' : alamatController.text,
-                    'No_telp' : phoneController.text
+                    'Alamat': alamatController.text,
+                    'No_telp': phoneController.text
                   });
                   namaController.text = '';
                   emailController.text = '';
                   alamatController.text = '';
                   phoneController.text = '';
 
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DataPegawai(),));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DataPegawai(),
+                      ));
                 }
               },
               child: Text(

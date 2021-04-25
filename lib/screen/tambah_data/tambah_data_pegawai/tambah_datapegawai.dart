@@ -1,7 +1,13 @@
+import 'package:fastmilk_admin/screen/tambah_data/tambah_data_pegawai/component/body_tambahpegawai.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'component/body_tambahpegawai.dart';
 
-import 'tambah_data_pegawai/component/body_tambahpegawai.dart';
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp();
+//   runApp(TambahPegawai());
+// }
 
 class TambahPegawai extends StatelessWidget {
   static String routeName = "/tambahPegawai";
@@ -18,8 +24,10 @@ class TambahPegawai extends StatelessWidget {
               Icons.arrow_back,
               color: Colors.white,
             )),
-        title: Text('TAMBAH DATA PEGAWAI',
-            style: TextStyle(fontSize: 17, color: Colors.white)),
+        title: Text(
+          'TAMBAH DATA PEGAWAI',
+          style: TextStyle(fontSize: 17),
+        ),
         centerTitle: true,
         backgroundColor: Color(0xFFFE931D),
       ),
