@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'components/body_profilepegawai.dart';
 
 class ProfilePegawai extends StatelessWidget {
-  static String routeName = "/profilePegawai";
+  // static String routeName = "/profilePegawai";
+  static String routeName = "/profilpegawai";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -17,6 +17,7 @@ final Map<String, WidgetBuilder> routes = {
   LandingScreen.routeName: (context) => LandingScreen(),
   SplashScreen.routeName: (context) => SplashScreen(),
   Login.routeName: (context) => Login(),
+  // ProfilePegawai.routeName: (context) => ProfilePegawai(),
   ProfilePegawai.routeName: (context) => ProfilePegawai(),
   EditPegawai.routeName: (context) => EditPegawai(),
   HomePage.routeName: (context) => HomePage(),

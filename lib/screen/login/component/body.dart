@@ -1,6 +1,7 @@
 import 'package:fastmilk_admin/component/default_button.dart';
 import 'package:fastmilk_admin/screen/homepage/home_page.dart';
 import 'package:fastmilk_admin/services/auth_login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -84,13 +85,16 @@ class _LoginFormState extends State<LoginForm> {
             text: "Masuk",
             press: () {
               if (_formKey.currentState.validate()) {
-                Navigator.pushNamed(context, HomePage.routeName);
                 final String email = emailController.text.trim();
                 final String password = passwordController.text.trim();
-                context.read<AuthServices>().login(
-                      email,
-                      password,
-                    );
+
+                // context.read<AuthServices>().login(email, password);
+
+                if (context.read<AuthServices>().login(email, password) !=
+                    null) {
+                  Navigator.pushNamed(context, HomePage.routeName);
+                }
+                return print(email);
               }
             },
           ),

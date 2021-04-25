@@ -9,6 +9,9 @@ import 'package:path/path.dart';
 class FirestoreService {
   final CollectionReference _salescollectionReference = FirebaseFirestore.instance.collection('Sales');
   final CollectionReference _produkcollectionReference = FirebaseFirestore.instance.collection('Produk');
+  final String uid;
+
+  FirestoreService({this.uid});
 
   Future tambahDataProduk(String image, String jenis, String rasa, String stok, String harga, String berat, String kategori) async {
     return await _produkcollectionReference.add({
@@ -31,11 +34,6 @@ class FirestoreService {
       'No_telp' : notelp
     });
   }
-  
-  // static Future<String> uploadImage(File imageFile) async {
-  //   String fileName = basename(imageFile.path);
-  //   Reference ref = FirebaseStorage.instance.ref().child(fileName);
-  //   UploadTask uploadTask = ref.putFile(imageFile);
-  //   uploadTask.then((_) => ref.getDownloadURL());
-  // }
+
+
 }
