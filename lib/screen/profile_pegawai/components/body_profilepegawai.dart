@@ -12,8 +12,8 @@ class BodyProfilePegawai extends StatefulWidget {
 }
 
 class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
-    Map data = {};
-  
+  Map data = {};
+
   @override
   Widget build(BuildContext context) {
     data = ModalRoute.of(context).settings.arguments;
@@ -150,55 +150,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                 ),
               ],
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width / 2.3,
-                  height: 50,
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => EditPegawai(),));
-                    },
-                    child: Text('EDIT',
-                        style:
-                            TextStyle(color: Color(0xFFFE931D), fontSize: 16)),
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Color(0xFFFE931D),
-                            width: 1,
-                            style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(20)),
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width / 2.3,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      color: Color(0xFFFE931D),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                  child: MaterialButton(
-                    onPressed: () {
-                      
-                    },
-                    child: Text(
-                      'DELETE',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Color(0xFFFE931D),
-                            width: 1,
-                            style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(20)),
-                  ),
-                )
-              ],
-            ),
-          ),
+          )
         ],
       ),
     );

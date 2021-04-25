@@ -7,6 +7,7 @@ import 'package:fastmilk_admin/core/Models/Sales.dart';
 
 class CreateSalesViewModel extends BaseModel {
   final FirestoreService _firestoreService = locator<FirestoreService>();
+
   Sales sales = new Sales();
   get alamat => sales.alamat;
 
@@ -16,7 +17,32 @@ class CreateSalesViewModel extends BaseModel {
 
   Future addPost({@required String nama}) async {
     setBusy(true);
-    var result = await _firestoreService.addSales(Sales(nama: nama, email: email, alamat: alamat, notelp: notelp));
+    var result = await _firestoreService.addSales(
+        Sales(nama: nama, email: email, alamat: alamat, notelp: notelp));
     setBusy(false);
   }
+
+  // updateData(selectedDoc, newValues) {
+  //   FirebaseFirestore.instance
+  //       .collection('Sales')
+  //       .doc(selectedDoc)
+  //       .update(newValues)
+  //       .catchError((e) {
+  //     print(e);
+  //   });
+  // }
+
+  // getData() async {
+  //   return await FirebaseFirestore.instance.collection('Sales').snapshots();
+  // }
+
+  // deleteData(docId) {
+  //   FirebaseFirestore.instance
+  //       .collection('Sales')
+  //       .doc(docId)
+  //       .delete()
+  //       .catchError((e) {
+  //     print(e);
+  //   });
+  // }
 }

@@ -12,6 +12,10 @@ class BodyEditPegawai extends StatefulWidget {
 }
 
 class _BodyEditPegawaiState extends State<BodyEditPegawai> {
+  Map data = {};
+  TextEditingController namaController = TextEditingController();
+  TextEditingController alamatController = TextEditingController();
+  TextEditingController tlpController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,7 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
                 children: [
                   SvgPicture.asset('assets/images/Admin.svg'),
                   Text(
-                    'Name Example',
+                    "a",
                     style: TextStyle(color: Color(0xFFFE931D), fontSize: 20),
                   )
                 ],
@@ -69,15 +73,15 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
                 key: _formKey,
                 child: Column(
                   children: <Widget>[
-                    NamaFormField(),
+                    _buildTextField(namaController, 'Nama'),
                     SizedBox(
                       height: SizeConfig.blockSizeVertical * 3,
                     ),
-                    AlamatFormField(),
+                    _buildTextField(alamatController, 'Alamat'),
                     SizedBox(
                       height: SizeConfig.blockSizeVertical * 3,
                     ),
-                    PhoneFormField()
+                    _buildTextField(tlpController, 'Telepon')
                   ],
                 ),
               )
@@ -114,83 +118,96 @@ class _BodyEditPegawaiState extends State<BodyEditPegawai> {
       ])),
     );
   }
-}
 
-class PhoneFormField extends StatelessWidget {
-  const PhoneFormField({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
+  _buildTextField(TextEditingController controller, String labelText) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: TextFormField(
-        keyboardType: TextInputType.number,
+      child: TextField(
+        controller: controller,
         decoration: InputDecoration(
-            hintText: "Masukan nomor telepon",
-            labelText: "Phone",
-            labelStyle: TextStyle(color: Colors.black, fontSize: 20),
-            hintStyle: TextStyle(color: Colors.grey)),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return "Nomor telepon tidak boleh kosong";
-          }
-          return null;
-        },
+          labelText: labelText,
+          labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+        ),
       ),
     );
   }
 }
 
-class AlamatFormField extends StatelessWidget {
-  const AlamatFormField({
-    Key key,
-  }) : super(key: key);
+// class PhoneFormField extends StatelessWidget {
+//   const PhoneFormField({
+//     Key key,
+//   }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: TextFormField(
-        decoration: InputDecoration(
-            hintText: "Masukan alamat lengkap",
-            labelText: "Alamat",
-            labelStyle: TextStyle(color: Colors.black, fontSize: 20),
-            hintStyle: TextStyle(color: Colors.grey)),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return "Alamat tidak boleh kosong";
-          }
-          return null;
-        },
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 16),
+//       child: TextFormField(
+//         keyboardType: TextInputType.number,
+//         decoration: InputDecoration(
+//             hintText: "Masukan nomor telepon",
+//             labelText: "Phone",
+//             labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+//             hintStyle: TextStyle(color: Colors.grey)),
+//         validator: (value) {
+//           if (value == null || value.isEmpty) {
+//             return "Nomor telepon tidak boleh kosong";
+//           }
+//           return null;
+//         },
+//       ),
+//     );
+//   }
+// }
 
-class NamaFormField extends StatelessWidget {
-  const NamaFormField({
-    Key key,
-  }) : super(key: key);
+// class AlamatFormField extends StatelessWidget {
+//   const AlamatFormField({
+//     Key key,
+//   }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: TextFormField(
-        decoration: InputDecoration(
-            hintText: "Masukan nama",
-            labelText: "Nama",
-            labelStyle: TextStyle(color: Colors.black, fontSize: 20),
-            hintStyle: TextStyle(color: Colors.grey)),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return "Nama tidak boleh kosong";
-          }
-          return null;
-        },
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 16),
+//       child: TextFormField(
+//         decoration: InputDecoration(
+//             hintText: "Masukan alamat lengkap",
+//             labelText: "Alamat",
+//             labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+//             hintStyle: TextStyle(color: Colors.grey)),
+//         validator: (value) {
+//           if (value == null || value.isEmpty) {
+//             return "Alamat tidak boleh kosong";
+//           }
+//           return null;
+//         },
+//       ),
+//     );
+//   }
+// }
+
+// class NamaFormField extends StatelessWidget {
+//   const NamaFormField({
+//     Key key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 16),
+//       child: TextFormField(
+//         decoration: InputDecoration(
+//             hintText: "Masukan nama",
+//             labelText: "Nama",
+//             labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+//             hintStyle: TextStyle(color: Colors.grey)),
+//         validator: (value) {
+//           if (value == null || value.isEmpty) {
+//             return "Nama tidak boleh kosong";
+//           }
+//           return null;
+//         },
+//       ),
+//     );
+//   }
+// }
