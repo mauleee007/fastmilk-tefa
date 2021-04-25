@@ -31,7 +31,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   children: [
                     SvgPicture.asset('assets/images/Admin.svg'),
                     Text(
-                      'Name Example',
+                      data['Nama'],
                       style: TextStyle(color: Color(0xFFFE931D), fontSize: 20),
                     )
                   ],
@@ -59,7 +59,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                           width: 15,
                           child: Text(':', style: TextStyle(fontSize: 18))),
                       Flexible(
-                          child: Text('example@mail.id',
+                          child: Text(data['Email'],
                               style:
                                   TextStyle(color: Colors.grey, fontSize: 18),
                               overflow: TextOverflow.ellipsis)),
@@ -84,7 +84,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                           width: 15,
                           child: Text(':', style: TextStyle(fontSize: 18))),
                       Flexible(
-                          child: Text('example',
+                          child: Text(data['Nama'],
                               style:
                                   TextStyle(color: Colors.grey, fontSize: 18),
                               overflow: TextOverflow.ellipsis)),
@@ -110,7 +110,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                           width: 15,
                           child: Text(':', style: TextStyle(fontSize: 18))),
                       Flexible(
-                          child: Text('example',
+                          child: Text(data['Alamat'],
                               style:
                                   TextStyle(color: Colors.grey, fontSize: 18),
                               overflow: TextOverflow.ellipsis)),
@@ -136,7 +136,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                           width: 15,
                           child: Text(':', style: TextStyle(fontSize: 18))),
                       Flexible(
-                          child: Text('example-xxx',
+                          child: Text(data['No_telp'],
                               style:
                                   TextStyle(color: Colors.grey, fontSize: 18),
                               overflow: TextOverflow.ellipsis)),
@@ -181,7 +181,9 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                       color: Color(0xFFFE931D),
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      
+                    },
                     child: Text(
                       'DELETE',
                       style: TextStyle(color: Colors.white, fontSize: 16),

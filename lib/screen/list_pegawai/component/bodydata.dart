@@ -22,39 +22,39 @@ class _BodyDataState extends State<BodyData> {
             return Center(child: CircularProgressIndicator());
           } else {
             return ListView.separated(
-                itemCount: snapshot.data.docs.length,
-                itemBuilder: (context, index) {
-                  DocumentSnapshot doc = snapshot.data.docs[index];
-                  return InkWell(
-                    onTap: () {
-                      // Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  ProfilePegawai()));
-                      Navigator.pushReplacementNamed(context, ProfilePegawai.routeName, arguments: {
-                        'Nama' : doc.data()['Nama'],
-                        'Email' : doc.data()['Email'],
-                        'Alamat' : doc.data()['Alamat'],
-                        'No_Telp' : doc.data()['No_Telp']
-                      });
-                    },
-                      child: ListTile(
+              itemCount: snapshot.data.docs.length,
+              itemBuilder: (context, index) {
+                DocumentSnapshot doc = snapshot.data.docs[index];
+                return ListTile(
                       leading: SvgPicture.asset('assets/images/Admin.svg'),
-                      title: Text(doc['Nama'], overflow: TextOverflow.ellipsis,),
-                      trailing: 
-                      // InkWell(
-                      //   onTap: () {
-                      //     sales.doc(doc.id).delete();                          
-                      //   },
-                      Icon(Icons.arrow_right)
+                      title: Text(
+                        doc['Nama'],
+                        overflow: TextOverflow.ellipsis,
                       ),
-                    // ),
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return Divider(
-                    color: Colors.grey,
-                    thickness: 1,
-                  );
-                },
-              );
+                      onTap: () {
+                        Navigator.pushReplacementNamed(
+                        context, ProfilePegawai.routeName,
+                        arguments: {
+                          'Nama': doc.data()['Nama'],
+                          'Email': doc.data()['Email'],
+                          'Alamat': doc.data()['Alamat'],
+                          'No_telp': doc.data()['No_telp']
+                        });
+                      },
+                      trailing:
+                          // InkWell(
+                          //   onTap: () {
+                          //     sales.doc(doc.id).delete();
+                          //   },
+                          Icon(Icons.arrow_right));
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return Divider(
+                  color: Colors.grey,
+                  thickness: 1,
+                );
+              },
+            );
           }
         });
   }

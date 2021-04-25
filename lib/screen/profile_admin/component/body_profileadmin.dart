@@ -1,4 +1,5 @@
 import 'package:fastmilk_admin/constants.dart';
+import 'package:fastmilk_admin/screen/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../size_config.dart';
@@ -146,10 +147,8 @@ class _BodyProfileAdminState extends State<BodyProfileAdmin> {
               height: 50,
               child: MaterialButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => EditPegawai()),
-                  // );
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => Login()));
                 },
                 child: Text('LOGOUT',
                     style: TextStyle(color: kPrimaryColor, fontSize: 16)),

@@ -162,16 +162,16 @@ class _BodyHomeState extends State<BodyHome> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: SizeConfig.blockSizeVertical * 10,
-                ),
-                DefaultButton2(
-                    text: "Logout",
-                    press: () {
-                      auth.signOut();
-                      Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => Login()));
-                    })
+                // SizedBox(
+                //   height: SizeConfig.blockSizeVertical * 10,
+                // ),
+                // DefaultButton2(
+                //     text: "Logout",
+                //     press: () {
+                //       auth.signOut();
+                //       Navigator.of(context).pushReplacement(
+                //           MaterialPageRoute(builder: (context) => Login()));
+                //     })
               ],
             ),
           ),

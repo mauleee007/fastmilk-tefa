@@ -25,4 +25,6 @@ final Map<String, WidgetBuilder> routes = {
   TambahPegawai.routeName: (context) => TambahPegawai(),
   DataBarang.routeName: (context) => DataBarang(),
   TambahBarang.routeName: (context) => TambahBarang(),
+  DetailBarang.routeName: (context) => DetailBarang(),
+  EditBarang.routeName: (context) => EditBarang()
 };
