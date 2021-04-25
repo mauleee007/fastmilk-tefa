@@ -20,7 +20,7 @@ class _BodyState extends State<Body> {
         Expanded(
           flex: 2,
           child: SizedBox(
-            child: SvgPicture.asset('assets/images/Logo_perusahaan.svg',
+            child: Image.asset('assets/images/logo.png',
               width: SizeConfig.blockSizeHorizontal * 50,
               height: SizeConfig.blockSizeHorizontal * 50,
             ),

@@ -166,7 +166,7 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
                 }
               },
               child: Text(
-                'ACCEPT',
+                'SIMPAN',
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
               shape: RoundedRectangleBorder(

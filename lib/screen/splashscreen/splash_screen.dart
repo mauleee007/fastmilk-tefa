@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
     SizeConfig().init(context);
     return Scaffold(
       body: Center(
-        child: SvgPicture.asset('assets/images/Logo_perusahaan.svg',
+        child: Image.asset('assets/images/logo.png',
           width: SizeConfig.blockSizeHorizontal * 50,
           height: SizeConfig.blockSizeVertical * 50,
         ),

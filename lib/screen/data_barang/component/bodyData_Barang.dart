@@ -29,6 +29,7 @@ class _BodyDataBarangState extends State<BodyDataBarang> {
                 return InkWell(
                   onTap: () {
                     Navigator.of(context).pushReplacementNamed(DetailBarang.routeName, arguments: {
+                      'Produk_id' : doc.data()['Produk_id'],
                       'Jenis' : doc.data()['Jenis'],
                       'Rasa' : doc.data()['Rasa'],
                       'Stok' : doc.data()['Stok'],

@@ -37,10 +37,9 @@ class _BodyHomeState extends State<BodyHome> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: SizeConfig.blockSizeHorizontal * 35,
-                  height: SizeConfig.blockSizeVertical * 30,
-                  child: SvgPicture.asset('assets/images/Logo_perusahaan.svg', width: 100, height: 100)
+                  child: Image.asset('assets/images/logo.png', width: 200, height: 200)
                 ),
+                SizedBox(height: SizeConfig.blockSizeVertical * 3),
                 Container(
                   width: SizeConfig.blockSizeHorizontal * 90,
                   height: SizeConfig.blockSizeVertical * 10,

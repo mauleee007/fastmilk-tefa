@@ -54,7 +54,7 @@ class _BodyProfilePegawaiState extends State<BodyDetailBarang> {
                             child: Text(':', style: TextStyle(fontSize: 18))),
                         Flexible(
                             child: Text(
-                                '1234239487238974239824234234239847293847287',
+                                data['Produk_id'],
                                 style:
                                     TextStyle(color: Colors.grey, fontSize: 18),
                                 overflow: TextOverflow.fade)),

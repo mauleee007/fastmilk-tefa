@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fastmilk_admin/core/Models/Sales.dart';
+// import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 
@@ -29,7 +32,10 @@ class FirestoreService {
     });
   }
   
-  static Future<String> uploadImage(File imageFile) async {
-    String fileName = imageFile.path;
-  }
+  // static Future<String> uploadImage(File imageFile) async {
+  //   String fileName = basename(imageFile.path);
+  //   Reference ref = FirebaseStorage.instance.ref().child(fileName);
+  //   UploadTask uploadTask = ref.putFile(imageFile);
+  //   uploadTask.then((_) => ref.getDownloadURL());
+  // }
 }
