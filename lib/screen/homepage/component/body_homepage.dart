@@ -1,7 +1,14 @@
+import 'package:fastmilk_admin/component/default_button.dart';
 import 'package:fastmilk_admin/constants.dart';
+import 'package:fastmilk_admin/screen/data_barang/data_barang.dart';
+
 import 'package:fastmilk_admin/screen/list_pegawai/data_pegawai.dart';
+import 'package:fastmilk_admin/screen/login/login.dart';
+
 import 'package:fastmilk_admin/screen/profile_admin/profile_admin.dart';
+import 'package:fastmilk_admin/services/auth_login.dart';
 import 'package:fastmilk_admin/size_config.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -11,6 +18,13 @@ class BodyHome extends StatefulWidget {
 }
 
 class _BodyHomeState extends State<BodyHome> {
+  final auth = FirebaseAuth.instance;
+  // FirebaseAuth auth = FirebaseAuth.instance;
+
+  // signOut() async {
+  //   await auth.signOut();
+  // }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -23,8 +37,39 @@ class _BodyHomeState extends State<BodyHome> {
             children: [
               Container(
                 width: SizeConfig.blockSizeHorizontal * 35,
-                height: SizeConfig.blockSizeVertical * 35,
-                child: SvgPicture.asset('assets/images/Admin.svg'),
+                height: SizeConfig.blockSizeVertical * 30,
+                child: Image.asset('assets/images/logo.png'),
+              ),
+              Container(
+                width: SizeConfig.blockSizeHorizontal * 90,
+                height: SizeConfig.blockSizeVertical * 10,
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, ProfileAdmin.routeName);
+                  },
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: SizeConfig.blockSizeHorizontal * 28,
+                      ),
+                      Text(
+                        'Profil',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                    ],
+                  ),
+                  color: kPrimaryColor,
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                          color: Color(0xFFFE931D),
+                          width: 1,
+                          style: BorderStyle.solid),
+                      borderRadius: BorderRadius.circular(20)),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),
@@ -75,11 +120,7 @@ class _BodyHomeState extends State<BodyHome> {
                           borderRadius: BorderRadius.circular(20)),
                       borderSide: BorderSide(width: 1, color: Colors.grey),
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => PegawaiPage()),
-                        // );
+                        Navigator.pushNamed(context, DataBarang.routeName);
                       },
                       child: Column(
                         children: [
@@ -101,6 +142,16 @@ class _BodyHomeState extends State<BodyHome> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical * 10,
+              ),
+              DefaultButton2(
+                  text: "Logout",
+                  press: () {
+                    auth.signOut();
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => Login()));
+                  })
             ],
           ),
         ),

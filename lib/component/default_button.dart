@@ -16,8 +16,8 @@ class DefaultButton2 extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return SizedBox(
-      width: double.infinity,
-      height: SizeConfig.blockSizeVertical * 15,
+      width: SizeConfig.blockSizeHorizontal * 30,
+      height: SizeConfig.blockSizeVertical * 5,
       child: OutlineButton(
         color: Colors.white,
         shape: RoundedRectangleBorder(
