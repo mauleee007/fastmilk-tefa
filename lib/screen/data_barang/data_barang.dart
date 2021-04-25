@@ -1,3 +1,4 @@
+import 'package:fastmilk_admin/screen/tambah_data/tambah_data_barang/tambah_databarang.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -9,7 +10,9 @@ class DataBarang extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, TambahBarang.routeName);
+        },
         child: Icon(
           Icons.add,
           color: Colors.white,

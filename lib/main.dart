@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         theme: theme(),
         debugShowCheckedModeBanner: false,
         home: AuthWrapper(),
-        // initialRoute: SplashScreen.routeName,
+        initialRoute: SplashScreen.routeName,
         routes: routes,
       ),
     );

@@ -29,130 +29,151 @@ class _BodyHomeState extends State<BodyHome> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return SafeArea(
-      child: Container(
-        child: Padding(
-          padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 1),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: SizeConfig.blockSizeHorizontal * 35,
-                height: SizeConfig.blockSizeVertical * 30,
-                child: Image.asset('assets/images/logo.png'),
-              ),
-              Container(
-                width: SizeConfig.blockSizeHorizontal * 90,
-                height: SizeConfig.blockSizeVertical * 10,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, ProfileAdmin.routeName);
-                  },
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.person,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: SizeConfig.blockSizeHorizontal * 28,
-                      ),
-                      Text(
-                        'Profil',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                  color: kPrimaryColor,
-                  shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                          color: Color(0xFFFE931D),
-                          width: 1,
-                          style: BorderStyle.solid),
-                      borderRadius: BorderRadius.circular(20)),
+      child: SingleChildScrollView(
+        child: Container(
+          child: Padding(
+            padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 1),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: SizeConfig.blockSizeHorizontal * 35,
+                  height: SizeConfig.blockSizeVertical * 30,
+                  child: Image.asset('assets/images/logo.png'),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: SizeConfig.blockSizeHorizontal * 5),
-                  child: Container(
-                    width: SizeConfig.blockSizeHorizontal * 90,
-                    height: SizeConfig.blockSizeVertical * 20,
-                    child: OutlineButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      borderSide: BorderSide(width: 1, color: Colors.grey),
-                      onPressed: () {
-                        Navigator.pushNamed(context, DataPegawai.routeName);
-                      },
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/pegawai.png',
-                            width: SizeConfig.blockSizeHorizontal * 15,
-                            height: SizeConfig.blockSizeVertical * 15,
+                Container(
+                  width: SizeConfig.blockSizeHorizontal * 90,
+                  height: SizeConfig.blockSizeVertical * 10,
+                  child: RaisedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, ProfileAdmin.routeName);
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0)),
+                    padding: EdgeInsets.all(0.0),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Color(0xffF07028), Color(0xffFE931D)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
                           ),
-                          Text(
-                            'Data Pegawai',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontFamily: 'ABeeZee1'),
-                          )
-                        ],
+                          borderRadius: BorderRadius.circular(30.0)),
+                      child: Container(
+                        constraints:
+                            BoxConstraints(maxWidth: 400.0, minHeight: 50.0),
+                        alignment: Alignment.center,
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: SizeConfig.blockSizeHorizontal * 2),
+                              child: Icon(
+                                Icons.person,
+                                color: Colors.white,
+                                size: 40,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: SizeConfig.blockSizeHorizontal * 25),
+                              child: Text(
+                                "Profil",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 3),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: SizeConfig.blockSizeHorizontal * 5),
-                  child: Container(
-                    width: SizeConfig.blockSizeHorizontal * 90,
-                    height: SizeConfig.blockSizeVertical * 20,
-                    child: OutlineButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      borderSide: BorderSide(width: 1, color: Colors.grey),
-                      onPressed: () {
-                        Navigator.pushNamed(context, DataBarang.routeName);
-                      },
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/images/barang.png',
-                            width: SizeConfig.blockSizeHorizontal * 15,
-                            height: SizeConfig.blockSizeVertical * 15,
-                          ),
-                          Text(
-                            'Data Barang',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontFamily: 'ABeeZee1'),
-                          )
-                        ],
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: SizeConfig.blockSizeHorizontal * 5),
+                    child: Container(
+                      width: SizeConfig.blockSizeHorizontal * 90,
+                      height: SizeConfig.blockSizeVertical * 20,
+                      child: OutlineButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        borderSide: BorderSide(width: 1, color: Colors.grey),
+                        onPressed: () {
+                          Navigator.pushNamed(context, DataPegawai.routeName);
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/images/pegawai.png',
+                              width: SizeConfig.blockSizeHorizontal * 15,
+                              height: SizeConfig.blockSizeVertical * 15,
+                            ),
+                            Text(
+                              'Data Pegawai',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'ABeeZee1'),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: SizeConfig.blockSizeVertical * 10,
-              ),
-              DefaultButton2(
-                  text: "Logout",
-                  press: () {
-                    auth.signOut();
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => Login()));
-                  })
-            ],
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: SizeConfig.blockSizeVertical * 3),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: SizeConfig.blockSizeHorizontal * 5),
+                    child: Container(
+                      width: SizeConfig.blockSizeHorizontal * 90,
+                      height: SizeConfig.blockSizeVertical * 20,
+                      child: OutlineButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        borderSide: BorderSide(width: 1, color: Colors.grey),
+                        onPressed: () {
+                          Navigator.pushNamed(context, DataBarang.routeName);
+                        },
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/barang.png',
+                              width: SizeConfig.blockSizeHorizontal * 15,
+                              height: SizeConfig.blockSizeVertical * 15,
+                            ),
+                            Text(
+                              'Data Barang',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'ABeeZee1'),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: SizeConfig.blockSizeVertical * 10,
+                ),
+                DefaultButton2(
+                    text: "Logout",
+                    press: () {
+                      auth.signOut();
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => Login()));
+                    })
+              ],
+            ),
           ),
         ),
       ),
