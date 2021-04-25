@@ -37,8 +37,39 @@ class _BodyHomeState extends State<BodyHome> {
             children: [
               Container(
                 width: SizeConfig.blockSizeHorizontal * 35,
-                height: SizeConfig.blockSizeVertical * 35,
-                child: SvgPicture.asset('assets/images/Admin.svg'),
+                height: SizeConfig.blockSizeVertical * 30,
+                child: Image.asset('assets/images/logo.png'),
+              ),
+              Container(
+                width: SizeConfig.blockSizeHorizontal * 90,
+                height: SizeConfig.blockSizeVertical * 10,
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, ProfileAdmin.routeName);
+                  },
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: SizeConfig.blockSizeHorizontal * 28,
+                      ),
+                      Text(
+                        'Profil',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                    ],
+                  ),
+                  color: kPrimaryColor,
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                          color: Color(0xFFFE931D),
+                          width: 1,
+                          style: BorderStyle.solid),
+                      borderRadius: BorderRadius.circular(20)),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),
