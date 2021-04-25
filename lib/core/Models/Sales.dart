@@ -17,11 +17,11 @@ class Sales {
 
   // Map<String, dynamic> toMap(){
   //   return {
-  //     // 'id' : id,
-  //     'nama' : nama,
-  //     'email' : email,
-  //     'alamat': alamat,
-  //     'notelp' : notelp
+  //     'salesId' : salesId,
+  //     'Nama' : nama,
+  //     'Email' : email,
+  //     'Alamat': alamat,
+  //     'No_telp' : notelp
   //   };
   // }
 
@@ -29,11 +29,11 @@ class Sales {
   //   if(map == null) return null;
 
   //   return Sales(
-  //     nama: map['nama'],
-  //     email: map['email'],
-  //     alamat: map['alamat'],
-  //     notelp: map['notelp'],
-  //     // id: map['id']
+  //     nama: map['Nama'],
+  //     email: map['Email'],
+  //     alamat: map['Alamat'],
+  //     notelp: map['No_telp'],
+  //     salesId: map['salesId']
   //   );
   // }
 }

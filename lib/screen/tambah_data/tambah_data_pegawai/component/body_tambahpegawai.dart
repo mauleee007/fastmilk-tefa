@@ -34,6 +34,8 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference sales = firestore.collection('Sales');
 
+    // FirestoreService _db;
+
     var uuid = Uuid();
     SizeConfig().init(context);
     return SingleChildScrollView(
@@ -142,12 +144,6 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
               onPressed: () {
                 if (_formKey.currentState.validate()) {
                   // ScaffoldMessenger.of(context).showSnackBar(Snackbar(content: Text('Processing Data')));
-                  // FirestoreService().addSales(Sales(
-                  //   nama: ,
-                  //   email: ,
-                  //   alamat: ,
-                  //   notelp: ,
-                  // ));
                   sales.add({
                     'Sales_id': uuid.v1(),
                     'Nama': namaController.text,
@@ -159,6 +155,8 @@ class _BodyTambahDataPegawaiState extends State<BodyTambahDataPegawai> {
                   emailController.text = '';
                   alamatController.text = '';
                   phoneController.text = '';
+                  
+                  // _db.addSales(uuid.v1(), namaController.text, emailController.text, alamatController.text, phoneController.text);
 
                   Navigator.push(
                       context,
