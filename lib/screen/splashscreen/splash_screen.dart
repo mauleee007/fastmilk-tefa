@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:fastmilk_admin/screen/landing_screen/landing_screen.dart';
 import 'package:fastmilk_admin/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = '/splash';
@@ -33,8 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
     SizeConfig().init(context);
     return Scaffold(
       body: Center(
-        child: Image.asset(
-          'assets/images/splash.png',
+        child: SvgPicture.asset('assets/images/Logo_perusahaan.svg',
           width: SizeConfig.blockSizeHorizontal * 50,
           height: SizeConfig.blockSizeVertical * 50,
         ),

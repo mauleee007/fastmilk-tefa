@@ -11,7 +11,7 @@ class DetailBarang extends StatelessWidget {
           automaticallyImplyLeading: false,
           leading: MaterialButton(
               onPressed: () {
-                // Navigator.of(context).pushNamed(DataBarang.routeName);
+                Navigator.of(context).pushNamed(DataBarang.routeName);
               },
               child: Icon(
                 Icons.arrow_back,

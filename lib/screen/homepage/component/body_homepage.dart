@@ -39,7 +39,7 @@ class _BodyHomeState extends State<BodyHome> {
                 Container(
                   width: SizeConfig.blockSizeHorizontal * 35,
                   height: SizeConfig.blockSizeVertical * 30,
-                  child: Image.asset('assets/images/logo.png'),
+                  child: SvgPicture.asset('assets/images/Logo_perusahaan.svg', width: 100, height: 100)
                 ),
                 Container(
                   width: SizeConfig.blockSizeHorizontal * 90,
@@ -90,10 +90,9 @@ class _BodyHomeState extends State<BodyHome> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Image.asset(
-                              'assets/images/pegawai.png',
-                              width: SizeConfig.blockSizeHorizontal * 15,
-                              height: SizeConfig.blockSizeVertical * 15,
+                            SizedBox(height: SizeConfig.blockSizeVertical * 3,),
+                            SvgPicture.asset('assets/images/officer 1.svg',
+                            width: SizeConfig.blockSizeVertical * 10,
                             ),
                             Text(
                               'Data Pegawai',
@@ -125,10 +124,9 @@ class _BodyHomeState extends State<BodyHome> {
                         },
                         child: Column(
                           children: [
-                            Image.asset(
-                              'assets/images/barang.png',
-                              width: SizeConfig.blockSizeHorizontal * 15,
-                              height: SizeConfig.blockSizeVertical * 15,
+                            SizedBox(height: SizeConfig.blockSizeVertical * 3,),
+                            SvgPicture.asset('assets/images/Logo_grocery.svg',
+                              width: SizeConfig.blockSizeVertical * 10,
                             ),
                             Text(
                               'Data Barang',
