@@ -13,33 +13,30 @@ class DataPegawai extends StatelessWidget {
   static String routeName = '/dataPegawai';
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TambahPegawai(),
-                  ));
-            },
-            backgroundColor: Colors.white,
-            shape: RoundedRectangleBorder(
-                side: BorderSide(color: Color(0xFFFE931D)),
-                borderRadius: BorderRadius.all(Radius.circular(30))),
-            child: Icon(Icons.add, color: Color(0xFFFE931D)),
-          ),
-          appBar: AppBar(
-            title: Text('DATA PEGAWAI',
-                style: TextStyle(
-                  fontSize: 17,
-                  fontFamily: 'ABeeZee',
-                )),
-            centerTitle: true,
-            backgroundColor: Color(0xFFFE931D),
-          ),
-          body: BodyData()),
-    );
+    return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TambahPegawai(),
+                ));
+          },
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+              side: BorderSide(color: Color(0xFFFE931D)),
+              borderRadius: BorderRadius.all(Radius.circular(30))),
+          child: Icon(Icons.add, color: Color(0xFFFE931D)),
+        ),
+        appBar: AppBar(
+          title: Text('DATA PEGAWAI',
+              style: TextStyle(
+                fontSize: 17,
+                fontFamily: 'ABeeZee',
+              )),
+          centerTitle: true,
+          backgroundColor: Color(0xFFFE931D),
+        ),
+        body: BodyData());
   }
 }

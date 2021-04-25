@@ -16,11 +16,13 @@ final Map<String, WidgetBuilder> routes = {
   LandingScreen.routeName: (context) => LandingScreen(),
   SplashScreen.routeName: (context) => SplashScreen(),
   Login.routeName: (context) => Login(),
+  // ProfilePegawai.routeName: (context) => ProfilePegawai(),
   ProfilePegawai.routeName: (context) => ProfilePegawai(),
   EditPegawai.routeName: (context) => EditPegawai(),
   HomePage.routeName: (context) => HomePage(),
   DataPegawai.routeName: (context) => DataPegawai(),
   ProfileAdmin.routeName: (context) => ProfileAdmin(),
   TambahPegawai.routeName: (context) => TambahPegawai(),
-  DataBarang.routeName: (context) => DataBarang()
+  DataBarang.routeName: (context) => DataBarang(),
+  DetailBarang.routeName: (context) => DetailBarang()
 };

@@ -20,7 +20,7 @@ class ProfileAdmin extends StatelessWidget {
                   color: Colors.white,
                 )),
             title: Text(
-              'PROFILE PEGAWAI',
+              'PROFILE Admin',
               style: TextStyle(fontSize: 17),
             ),
             centerTitle: true,

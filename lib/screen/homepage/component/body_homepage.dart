@@ -11,6 +11,9 @@ import 'package:fastmilk_admin/size_config.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+
+import '../home_page.dart';
 
 class BodyHome extends StatefulWidget {
   @override
@@ -18,12 +21,14 @@ class BodyHome extends StatefulWidget {
 }
 
 class _BodyHomeState extends State<BodyHome> {
-  final auth = FirebaseAuth.instance;
-  // FirebaseAuth auth = FirebaseAuth.instance;
+  // final auth = FirebaseAuth.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
 
-  // signOut() async {
-  //   await auth.signOut();
-  // }
+  // final user = User;
+
+  signOut() async {
+    await auth.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,9 +122,8 @@ class _BodyHomeState extends State<BodyHome> {
               DefaultButton2(
                   text: "Logout",
                   press: () {
-                    auth.signOut();
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => Login()));
+                    signOut();
+                    Navigator.pushNamed(context, Login.routeName);
                   })
             ],
           ),
