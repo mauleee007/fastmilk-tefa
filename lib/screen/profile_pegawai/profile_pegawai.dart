@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'components/body_profilepegawai.dart';
 
-// void main() => runApp(ProfilePegawai());
-
 class ProfilePegawai extends StatelessWidget {
   static String routeName = "/profilePegawai";
   @override

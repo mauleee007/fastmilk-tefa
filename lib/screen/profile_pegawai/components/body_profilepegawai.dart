@@ -12,8 +12,12 @@ class BodyProfilePegawai extends StatefulWidget {
 }
 
 class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
+    Map data = {};
+  
   @override
   Widget build(BuildContext context) {
+    data = ModalRoute.of(context).settings.arguments;
+    print(data);
     SizeConfig().init(context);
     return Container(
       child: Column(
@@ -157,7 +161,7 @@ class _BodyProfilePegawaiState extends State<BodyProfilePegawai> {
                   height: 50,
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, EditPegawai.routeName);
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => EditPegawai(),));
                     },
                     child: Text('EDIT',
                         style:

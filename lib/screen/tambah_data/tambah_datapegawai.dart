@@ -3,18 +3,17 @@ import 'package:flutter/material.dart';
 
 import 'component/body_tambahpegawai.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(TambahPegawai());
-}
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp();
+//   runApp(TambahPegawai());
+// }
 
 class TambahPegawai extends StatelessWidget {
   static String routeName = "/tambahPegawai";
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
             leading: MaterialButton(
@@ -33,7 +32,6 @@ class TambahPegawai extends StatelessWidget {
             backgroundColor: Color(0xFFFE931D),
           ),
           body: BodyTambahDataPegawai(),
-      )
-    );
+      );
   }
 }
