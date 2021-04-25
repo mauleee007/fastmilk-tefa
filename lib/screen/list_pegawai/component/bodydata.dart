@@ -13,8 +13,10 @@ class BodyData extends StatefulWidget {
 class _BodyDataState extends State<BodyData> {
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+    CollectionReference sales = firebaseFirestore.collection('Sales');
     return StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('Sales').snapshots(),
+        stream: sales.orderBy('Nama').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if (!snapshot.hasData) {
             return Center(child: CircularProgressIndicator());
@@ -23,20 +25,28 @@ class _BodyDataState extends State<BodyData> {
               itemCount: snapshot.data.docs.length,
               itemBuilder: (context, index) {
                 DocumentSnapshot doc = snapshot.data.docs[index];
-
-                return InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, ProfilePegawai.routeName);
-                  },
-                  child: ListTile(
-                    leading: SvgPicture.asset('assets/images/Admin.svg'),
-                    title: Text(
-                      doc['Nama'],
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    trailing: Icon(Icons.arrow_right),
-                  ),
-                );
+                return ListTile(
+                      leading: SvgPicture.asset('assets/images/Admin.svg'),
+                      title: Text(
+                        doc['Nama'],
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      onTap: () {
+                        Navigator.pushReplacementNamed(
+                        context, ProfilePegawai.routeName,
+                        arguments: {
+                          'Nama': doc.data()['Nama'],
+                          'Email': doc.data()['Email'],
+                          'Alamat': doc.data()['Alamat'],
+                          'No_telp': doc.data()['No_telp']
+                        });
+                      },
+                      trailing:
+                          // InkWell(
+                          //   onTap: () {
+                          //     sales.doc(doc.id).delete();
+                          //   },
+                          Icon(Icons.arrow_right));
               },
               separatorBuilder: (BuildContext context, int index) {
                 return Divider(

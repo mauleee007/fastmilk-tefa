@@ -9,7 +9,8 @@ import 'package:fastmilk_admin/screen/login/login.dart';
 import 'package:fastmilk_admin/screen/profile_admin/profile_admin.dart';
 import 'package:fastmilk_admin/screen/profile_pegawai/profile_pegawai.dart';
 import 'package:fastmilk_admin/screen/splashscreen/splash_screen.dart';
-import 'package:fastmilk_admin/screen/tambah_data/tambah_datapegawai.dart';
+import 'package:fastmilk_admin/screen/tambah_data/tambah_data_barang/tambah_databarang.dart';
+import 'package:fastmilk_admin/screen/tambah_data/tambah_data_pegawai/tambah_datapegawai.dart';
 import 'package:flutter/material.dart';
 
 final Map<String, WidgetBuilder> routes = {
@@ -24,5 +25,11 @@ final Map<String, WidgetBuilder> routes = {
   ProfileAdmin.routeName: (context) => ProfileAdmin(),
   TambahPegawai.routeName: (context) => TambahPegawai(),
   DataBarang.routeName: (context) => DataBarang(),
+<<<<<<< HEAD
   DetailBarang.routeName: (context) => DetailBarang()
+=======
+  TambahBarang.routeName: (context) => TambahBarang(),
+  DetailBarang.routeName: (context) => DetailBarang(),
+  EditBarang.routeName: (context) => EditBarang()
+>>>>>>> 1fff313da5d7cbd1a474535decbbf3d428296e9e
 };
