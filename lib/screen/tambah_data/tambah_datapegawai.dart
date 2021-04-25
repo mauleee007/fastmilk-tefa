@@ -3,12 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'component/body_tambahpegawai.dart';
 
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();
-//   runApp(TambahPegawai());
-// }
-
 class TambahPegawai extends StatelessWidget {
   static String routeName = "/tambahPegawai";
   @override
@@ -26,7 +20,7 @@ class TambahPegawai extends StatelessWidget {
                 )),
             title: Text(
               'TAMBAH DATA PEGAWAI',
-              style: TextStyle(fontSize: 17),
+              style: TextStyle(fontSize: 17, color: Colors.white)
             ),
             centerTitle: true,
             backgroundColor: Color(0xFFFE931D),

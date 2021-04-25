@@ -1,3 +1,4 @@
+import 'package:fastmilk_admin/screen/list_pegawai/data_pegawai.dart';
 import 'package:flutter/material.dart';
 
 import 'components/body_profilepegawai.dart';
@@ -11,7 +12,7 @@ class ProfilePegawai extends StatelessWidget {
           automaticallyImplyLeading: false,
           leading: MaterialButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed(DataPegawai.routeName);
               },
               child: Icon(
                 Icons.arrow_back,
@@ -19,7 +20,7 @@ class ProfilePegawai extends StatelessWidget {
               )),
           title: Text(
             'PROFILE PEGAWAI',
-            style: TextStyle(fontSize: 17),
+            style: TextStyle(fontSize: 17, color: Colors.white),
           ),
           centerTitle: true,
           backgroundColor: Color(0xFFFE931D),
