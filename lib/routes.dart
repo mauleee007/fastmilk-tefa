@@ -25,11 +25,7 @@ final Map<String, WidgetBuilder> routes = {
   ProfileAdmin.routeName: (context) => ProfileAdmin(),
   TambahPegawai.routeName: (context) => TambahPegawai(),
   DataBarang.routeName: (context) => DataBarang(),
-<<<<<<< HEAD
-  DetailBarang.routeName: (context) => DetailBarang()
-=======
   TambahBarang.routeName: (context) => TambahBarang(),
   DetailBarang.routeName: (context) => DetailBarang(),
   EditBarang.routeName: (context) => EditBarang()
->>>>>>> 1fff313da5d7cbd1a474535decbbf3d428296e9e
 };

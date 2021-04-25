@@ -167,19 +167,14 @@ class _BodyHomeState extends State<BodyHome> {
                     ),
                   ),
                 ),
-<<<<<<< HEAD
-              ),
-              SizedBox(
-                height: SizeConfig.blockSizeVertical * 10,
-              ),
-              DefaultButton2(
+                SizedBox(height: SizeConfig.blockSizeVertical * 3),
+                DefaultButton2(
                   text: "Logout",
                   press: () {
                     signOut();
                     Navigator.pushNamed(context, Login.routeName);
-                  })
-            ],
-=======
+                  },
+                )
                 // SizedBox(
                 //   height: SizeConfig.blockSizeVertical * 10,
                 // ),
@@ -192,7 +187,6 @@ class _BodyHomeState extends State<BodyHome> {
                 //     })
               ],
             ),
->>>>>>> 1fff313da5d7cbd1a474535decbbf3d428296e9e
           ),
         ),
       ),

@@ -8,33 +8,6 @@ class DataPegawai extends StatelessWidget {
   static String routeName = '/dataPegawai';
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => TambahPegawai(),
-                ));
-          },
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-              side: BorderSide(color: Color(0xFFFE931D)),
-              borderRadius: BorderRadius.all(Radius.circular(30))),
-          child: Icon(Icons.add, color: Color(0xFFFE931D)),
-        ),
-        appBar: AppBar(
-          title: Text('DATA PEGAWAI',
-              style: TextStyle(
-                fontSize: 17,
-                fontFamily: 'ABeeZee',
-              )),
-          centerTitle: true,
-          backgroundColor: Color(0xFFFE931D),
-        ),
-        body: BodyData());
-=======
     return Builder(
       builder: (context) => Scaffold(
           floatingActionButton: FloatingActionButton(
@@ -69,6 +42,5 @@ class DataPegawai extends StatelessWidget {
           ),
           body: BodyData()),
     );
->>>>>>> 1fff313da5d7cbd1a474535decbbf3d428296e9e
   }
 }
