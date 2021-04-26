@@ -168,13 +168,7 @@ class _BodyHomeState extends State<BodyHome> {
                   ),
                 ),
                 SizedBox(height: SizeConfig.blockSizeVertical * 3),
-                DefaultButton2(
-                  text: "Logout",
-                  press: () {
-                    signOut();
-                    Navigator.pushNamed(context, Login.routeName);
-                  },
-                )
+
                 // SizedBox(
                 //   height: SizeConfig.blockSizeVertical * 10,
                 // ),
