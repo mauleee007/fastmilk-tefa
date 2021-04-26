@@ -1,3 +1,4 @@
+import 'package:fastmilk_admin/component/default_button.dart';
 import 'package:fastmilk_admin/constants.dart';
 import 'package:fastmilk_admin/screen/login/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,8 +15,6 @@ class BodyProfileAdmin extends StatefulWidget {
 
 class _BodyProfileAdminState extends State<BodyProfileAdmin> {
   FirebaseAuth auth = FirebaseAuth.instance;
-
-  // final user = User;
 
   signOut() async {
     await auth.signOut();
@@ -148,29 +147,14 @@ class _BodyProfileAdminState extends State<BodyProfileAdmin> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Container(
-              alignment: Alignment.center,
-              width: MediaQuery.of(context).size.width / 2.3,
-              height: 50,
-              child: MaterialButton(
-                onPressed: () {
-                  signOut();
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => Login()));
-                },
-                child: Text('LOGOUT',
-                    style: TextStyle(color: kPrimaryColor, fontSize: 16)),
-                shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                        color: kPrimaryColor,
-                        width: 1,
-                        style: BorderStyle.solid),
-                    borderRadius: BorderRadius.circular(20)),
-              ),
-            ),
-          ),
+          SizedBox(height: SizeConfig.blockSizeVertical * 3),
+          DefaultButton2(
+            text: "Logout",
+            press: () {
+              signOut();
+              Navigator.pushNamed(context, Login.routeName);
+            },
+          )
         ],
       ),
     );

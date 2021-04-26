@@ -1,6 +1,7 @@
 import 'package:fastmilk_admin/component/default_button.dart';
 import 'package:fastmilk_admin/screen/login/login.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -19,8 +20,7 @@ class _BodyState extends State<Body> {
         Expanded(
           flex: 2,
           child: SizedBox(
-            child: Image.asset(
-              'assets/images/splash.png',
+            child: Image.asset('assets/images/logo.png',
               width: SizeConfig.blockSizeHorizontal * 50,
               height: SizeConfig.blockSizeHorizontal * 50,
             ),
@@ -47,7 +47,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),
                 Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat neque sit amet enim porttitor porttitor.",
+                  "Silahkan Pantau Bisnis Anda",
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),

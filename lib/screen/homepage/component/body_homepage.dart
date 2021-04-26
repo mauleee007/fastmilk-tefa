@@ -42,10 +42,9 @@ class _BodyHomeState extends State<BodyHome> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: SizeConfig.blockSizeHorizontal * 35,
-                  height: SizeConfig.blockSizeVertical * 30,
-                  child: Image.asset('assets/images/logo.png'),
-                ),
+                    child: Image.asset('assets/images/logo.png',
+                        width: 200, height: 200)),
+                SizedBox(height: SizeConfig.blockSizeVertical * 3),
                 Container(
                   width: SizeConfig.blockSizeHorizontal * 90,
                   height: SizeConfig.blockSizeVertical * 10,
@@ -113,10 +112,12 @@ class _BodyHomeState extends State<BodyHome> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Image.asset(
-                              'assets/images/pegawai.png',
-                              width: SizeConfig.blockSizeHorizontal * 15,
-                              height: SizeConfig.blockSizeVertical * 15,
+                            SizedBox(
+                              height: SizeConfig.blockSizeVertical * 3,
+                            ),
+                            SvgPicture.asset(
+                              'assets/images/officer 1.svg',
+                              width: SizeConfig.blockSizeVertical * 10,
                             ),
                             Text(
                               'Data Pegawai',
@@ -149,10 +150,12 @@ class _BodyHomeState extends State<BodyHome> {
                         },
                         child: Column(
                           children: [
-                            Image.asset(
-                              'assets/images/barang.png',
-                              width: SizeConfig.blockSizeHorizontal * 15,
-                              height: SizeConfig.blockSizeVertical * 15,
+                            SizedBox(
+                              height: SizeConfig.blockSizeVertical * 3,
+                            ),
+                            SvgPicture.asset(
+                              'assets/images/Logo_grocery.svg',
+                              width: SizeConfig.blockSizeVertical * 10,
                             ),
                             Text(
                               'Data Barang',
@@ -167,18 +170,6 @@ class _BodyHomeState extends State<BodyHome> {
                     ),
                   ),
                 ),
-                SizedBox(height: SizeConfig.blockSizeVertical * 3),
-
-                // SizedBox(
-                //   height: SizeConfig.blockSizeVertical * 10,
-                // ),
-                // DefaultButton2(
-                //     text: "Logout",
-                //     press: () {
-                //       auth.signOut();
-                //       Navigator.of(context).pushReplacement(
-                //           MaterialPageRoute(builder: (context) => Login()));
-                //     })
               ],
             ),
           ),
