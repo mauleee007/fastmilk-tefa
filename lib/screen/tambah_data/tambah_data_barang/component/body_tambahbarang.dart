@@ -129,49 +129,49 @@ class _BodyTambahBarangState extends State<BodyTambahBarang> {
                           return null;
                         },
                       )),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: SizeConfig.blockSizeVertical * 2),
-                          child: Text(
-                            "Upload Gambar Produk",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: SizeConfig.blockSizeVertical * 2),
-                          child: Container(
-                            width: SizeConfig.blockSizeHorizontal * 40,
-                            height: SizeConfig.blockSizeVertical * 7,
-                            child: MaterialButton(
-                              onPressed: () async {
-                                // File file = await getImage();
-                                // imagePath = await FirestoreService.uploadImage(file);
-                                // setState(() {});
-                              },
-                              child: Text('Upload Image',
-                                  style: TextStyle(
-                                      color: kPrimaryColor, fontSize: 16)),
-                              shape: RoundedRectangleBorder(
-                                  side: BorderSide(
-                                      color: kPrimaryColor,
-                                      width: 1,
-                                      style: BorderStyle.solid),
-                                  borderRadius: BorderRadius.circular(15)),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(horizontal: 16),
+                  //   child: Column(
+                  //     crossAxisAlignment: CrossAxisAlignment.start,
+                  //     children: [
+                  //       Padding(
+                  //         padding: EdgeInsets.only(
+                  //             top: SizeConfig.blockSizeVertical * 2),
+                  //         child: Text(
+                  //           "Upload Gambar Produk",
+                  //           style: TextStyle(
+                  //             color: Colors.black,
+                  //             fontSize: 18,
+                  //           ),
+                  //         ),
+                  //       ),
+                  //       Padding(
+                  //         padding: EdgeInsets.only(
+                  //             top: SizeConfig.blockSizeVertical * 2),
+                  //         child: Container(
+                  //           width: SizeConfig.blockSizeHorizontal * 40,
+                  //           height: SizeConfig.blockSizeVertical * 7,
+                  //           child: MaterialButton(
+                  //             onPressed: () async {
+                  //               // File file = await getImage();
+                  //               // imagePath = await FirestoreService.uploadImage(file);
+                  //               // setState(() {});
+                  //             },
+                  //             child: Text('Upload Image',
+                  //                 style: TextStyle(
+                  //                     color: kPrimaryColor, fontSize: 16)),
+                  //             shape: RoundedRectangleBorder(
+                  //                 side: BorderSide(
+                  //                     color: kPrimaryColor,
+                  //                     width: 1,
+                  //                     style: BorderStyle.solid),
+                  //                 borderRadius: BorderRadius.circular(15)),
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),

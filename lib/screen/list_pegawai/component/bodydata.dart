@@ -78,7 +78,7 @@ class _BodyDataState extends State<BodyData> {
                           builder: (context) => Dialog(
                                 child: SingleChildScrollView(
                                   child: Container(
-                                    height: SizeConfig.blockSizeVertical * 50,
+                                    height: SizeConfig.blockSizeVertical * 60,
                                     child: Column(
                                       children: <Widget>[
                                         SizedBox(
@@ -109,23 +109,8 @@ class _BodyDataState extends State<BodyData> {
                                           height:
                                               SizeConfig.blockSizeVertical * 2,
                                         ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                        Column(
                                           children: [
-                                            DefaultButton2(
-                                              text: "Hapus",
-                                              press: () {
-                                                snapshot
-                                                    .data.docs[index].reference
-                                                    .delete();
-                                              },
-                                            ),
-                                            SizedBox(
-                                              height:
-                                                  SizeConfig.blockSizeVertical *
-                                                      6,
-                                            ),
                                             DefaultButton2(
                                               text: "Simpan Data",
                                               press: () {
@@ -139,6 +124,19 @@ class _BodyDataState extends State<BodyData> {
                                                       phoneController.text
                                                 }).whenComplete(() =>
                                                         Navigator.pop(context));
+                                              },
+                                            ),
+                                            SizedBox(
+                                              height:
+                                                  SizeConfig.blockSizeVertical *
+                                                      1,
+                                            ),
+                                            DefaultButton2(
+                                              text: "Hapus",
+                                              press: () {
+                                                snapshot
+                                                    .data.docs[index].reference
+                                                    .delete();
                                               },
                                             ),
                                           ],
