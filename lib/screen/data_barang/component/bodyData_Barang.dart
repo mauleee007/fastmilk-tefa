@@ -79,12 +79,16 @@ class _BodyDataBarangState extends State<BodyDataBarang> {
                                 padding: const EdgeInsets.only(right: 20),
                                 child: InkWell(
                                     onTap: () {
-                                      jenisController.text = doc.data()['Jenis'];
+                                      jenisController.text =
+                                          doc.data()['Jenis'];
                                       rasaController.text = doc.data()['Rasa'];
                                       stokController.text = doc.data()['Stok'];
-                                      beratController.text = doc.data()['Berat'];
-                                      hargaController.text = doc.data()['Harga'];
-                                      kategoriController.text = doc.data()['Kategori'];
+                                      beratController.text =
+                                          doc.data()['Berat'];
+                                      hargaController.text =
+                                          doc.data()['Harga'];
+                                      kategoriController.text =
+                                          doc.data()['Kategori'];
                                       showDialog(
                                           context: context,
                                           builder: (context) => Dialog(
@@ -190,7 +194,74 @@ class _BodyDataBarangState extends State<BodyDataBarang> {
                               ),
                               InkWell(
                                   onTap: () {
-                                    produk.doc(doc.id).delete();
+                                    // produk.doc(doc.id).delete();
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) => Dialog(
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Container(
+                                                  height: SizeConfig
+                                                          .blockSizeVertical *
+                                                      15,
+                                                  child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                        'Konfirmasi',
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 16),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 10,
+                                                      ),
+                                                      Text(
+                                                          'Yakin ingin menghapus data?'),
+                                                      SizedBox(
+                                                        height: 10,
+                                                      ),
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          TextButton(
+                                                            onPressed: () {
+                                                              produk
+                                                                  .doc(doc.id)
+                                                                  .delete();
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop();
+                                                            },
+                                                            child: Text(
+                                                              'Ya',
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .red),
+                                                            ),
+                                                          ),
+                                                          TextButton(
+                                                            onPressed: () {
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop();
+                                                            },
+                                                            child:
+                                                                Text('Tidak'),
+                                                          )
+                                                        ],
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ));
                                   },
                                   child: Icon(Icons.delete_outline,
                                       color: Colors.red)),
