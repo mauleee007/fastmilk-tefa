@@ -15,10 +15,11 @@ class BodyProfileAdmin extends StatefulWidget {
 
 class _BodyProfileAdminState extends State<BodyProfileAdmin> {
   FirebaseAuth auth = FirebaseAuth.instance;
-  
+
   signOut() async {
     await auth.signOut();
   }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -147,12 +148,12 @@ class _BodyProfileAdminState extends State<BodyProfileAdmin> {
             ),
           ),
           SizedBox(height: SizeConfig.blockSizeVertical * 3),
-                DefaultButton2(
-                  text: "Logout",
-                  press: () {
-                    signOut();
-                    Navigator.pushNamed(context, Login.routeName);
-                  },
+          DefaultButton2(
+            text: "Logout",
+            press: () {
+              signOut();
+              Navigator.pushNamed(context, Login.routeName);
+            },
           )
         ],
       ),

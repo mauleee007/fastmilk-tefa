@@ -42,8 +42,8 @@ class _BodyHomeState extends State<BodyHome> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  child: Image.asset('assets/images/logo.png', width: 200, height: 200)
-                ),
+                    child: Image.asset('assets/images/logo.png',
+                        width: 200, height: 200)),
                 SizedBox(height: SizeConfig.blockSizeVertical * 3),
                 Container(
                   width: SizeConfig.blockSizeHorizontal * 90,
@@ -112,9 +112,12 @@ class _BodyHomeState extends State<BodyHome> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SizedBox(height: SizeConfig.blockSizeVertical * 3,),
-                            SvgPicture.asset('assets/images/officer 1.svg',
-                            width: SizeConfig.blockSizeVertical * 10,
+                            SizedBox(
+                              height: SizeConfig.blockSizeVertical * 3,
+                            ),
+                            SvgPicture.asset(
+                              'assets/images/officer 1.svg',
+                              width: SizeConfig.blockSizeVertical * 10,
                             ),
                             Text(
                               'Data Pegawai',
@@ -147,8 +150,11 @@ class _BodyHomeState extends State<BodyHome> {
                         },
                         child: Column(
                           children: [
-                            SizedBox(height: SizeConfig.blockSizeVertical * 3,),
-                            SvgPicture.asset('assets/images/Logo_grocery.svg',
+                            SizedBox(
+                              height: SizeConfig.blockSizeVertical * 3,
+                            ),
+                            SvgPicture.asset(
+                              'assets/images/Logo_grocery.svg',
                               width: SizeConfig.blockSizeVertical * 10,
                             ),
                             Text(
